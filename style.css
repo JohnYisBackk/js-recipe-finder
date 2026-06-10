@@ -1,0 +1,283 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: #f6f3ee;
+  color: #1f1f1f;
+}
+
+.app {
+  width: min(1180px, 92%);
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.hero {
+  min-height: 360px;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)),
+    url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1400&q=80");
+  border-radius: 35px;
+  padding: 50px;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.18);
+}
+
+.hero-content {
+  max-width: 620px;
+}
+
+.badge {
+  display: inline-flex;
+  margin-bottom: 18px;
+  padding: 9px 16px;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(12px);
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 999px;
+}
+
+.hero h1 {
+  font-size: clamp(40px, 7vw, 74px);
+  line-height: 0.95;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  max-width: 520px;
+  font-size: 18px;
+  color: #f1f1f1;
+  margin-bottom: 30px;
+}
+
+.search-box {
+  display: flex;
+  max-width: 580px;
+  gap: 12px;
+  padding: 8px;
+  background: white;
+  border-radius: 18px;
+}
+
+.search-box input {
+  color: #222;
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 0 18px;
+  font-size: 15px;
+}
+
+.search-box button {
+  border: none;
+  border-radius: 14px;
+  padding: 16px 24px;
+  background: #ff6b35;
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.search-box button:hover {
+  background: #f05a24;
+  transform: translateY(-1px);
+}
+
+.search-box button:disabled {
+  cursor: not-allowed;
+  transform: none;
+  opacity: 0.6;
+}
+
+.status {
+  min-height: 45px;
+  padding: 24px 0 8px;
+  font-weight: 700;
+}
+
+#loading {
+  color: #ff6b35;
+}
+
+#errorMessage {
+  color: #d62828;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin: 10px 0 25px;
+  gap: 20px;
+}
+
+.results-header h2 {
+  font-size: 34px;
+}
+
+.results-header p {
+  color: #777;
+}
+
+.recipes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+  gap: 24px;
+}
+
+.recipe-card {
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.08);
+  transition: 0.25s ease;
+}
+
+.recipe-card:hover {
+  transform: translateY(-6px);
+}
+.recipe-card img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+}
+
+.recipe-info {
+  padding: 20px;
+}
+
+.recipe-info h3 {
+  font-size: 21px;
+  margin-bottom: 10px;
+}
+
+.recipe-info p {
+  color: #777;
+  margin-bottom: 18px;
+}
+
+.recipe-info button {
+  width: 100%;
+  border: none;
+  border-radius: 14px;
+  padding: 14px;
+  background: #1f1f1f;
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.recipe-info button:hover {
+  background: #ff6b35;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  padding: 25px;
+  background: rgba(0, 0, 0, 0.65);
+  display: grid;
+  place-items: center;
+  z-index: 99;
+}
+
+.modal-content {
+  width: min(850px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  background: white;
+  border-radius: 28px;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.modal-content img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+}
+
+.modal-body {
+  padding: 30px;
+}
+
+.modal-category {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 7px 13px;
+  border-radius: 999px;
+  background: #fff0e8;
+  color: #ff6b35;
+  font-weight: 800;
+}
+
+.modal-body h2 {
+  font-size: 34px;
+  margin-bottom: 8px;
+}
+
+.modal-body h3 {
+  margin: 24px 0 10px;
+}
+
+.modal-body p {
+  color: #555;
+  line-height: 1.7;
+}
+
+.youtube-btn {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 14px 22px;
+  border-radius: 14px;
+  background: #ff0000;
+  color: white;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+@media (max-width: 680px) {
+  .hero {
+    padding: 32px 22px;
+  }
+
+  .search-box {
+    flex-direction: column;
+  }
+
+  .search-box input {
+    padding: 16px;
+  }
+
+  .results-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Recipe Finder PRO</title>
+  </head>
+  <body>
+    <main class="app">
+      <section class="hero">
+        <div class="hero-content">
+          <span class="badge">Recipe Finder PRO</span>
+          <h1>Find meals by ingredient</h1>
+          <p>
+            Search delicious recipes, explore details and save your favorite
+            cooking ideas.
+          </p>
+
+          <form id="searchForm" class="search-box">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Search chicken, pasta, beef..."
+            />
+            <button id="searchBtn" type="submit">Search</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="status">
+        <p id="loading" class="hidden">Search recipes...</p>
+        <p id="errorMessage" class="hidden">
+          No recipes found. Try another ingredient.
+        </p>
+      </section>
+
+      <section class="results-header">
+        <h2>Recipes</h2>
+        <p id="resultsCount">Search for your first recipe.</p>
+      </section>
+
+      <section id="recipesGrid" class="recipes-grid">
+        <!-- Recipe cards will be rendered here with JavaScript -->
+      </section>
+
+      <section id="recipeModal" class="modal hidden">
+        <div class="modal-content">
+          <button id="closeModal" class="close-btn">x</button>
+
+          <img src="" alt="Recipe image" id="modalImage" />
+
+          <div class="modal-body">
+            <span id="modalCategory" class="modal-category"></span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalArea"></p>
+
+            <h3>Instructions</h3>
+            <p id="modalInstructions"></p>
+
+            <a href="#" id="modalYoutube" target="_blank" class="youtube-btn"
+              >Watch on Youtube</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
