@@ -31,7 +31,7 @@ Users can search for recipes, browse meal suggestions, and view detailed cooking
 
 ## 🚀 Live Demo
 
-👉 **Live Demo:**  
+👉 **Live Demo:**  https://johnyisbackk.github.io/js-recipe-finder/
 
 ---
 
